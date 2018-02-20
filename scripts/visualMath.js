@@ -2,53 +2,54 @@
 
 VM = {};
 
+
 //VM Storage
 VM.Storage = {};
 
 //Tggl a
 VM.toggleUI = function(){
-	uivisible = (!uivisible);
-	if(uivisible){
-		$("#explanation").css("z-index","9");
-		$("#explanation").stop().animate({"opacity":"1"},500);
-		$(".vecUI").stop().animate({"opacity":0},1000).css("z-index",-10);
-		el.stop().animate({"opacity":"0.2"},500);
-		el.css("z-index","-9");
-		VM.message("Presione Z para volver al modo 3D.",3000,1000);
-	}
-	else{
-		$(".vecUI").stop().animate({"opacity":1},1000).css("z-index",14);
-		$("#explanation").css("z-index","-20");
-		$("#explanation").stop().animate({"opacity":"0"},500);
-		el.stop().animate({"opacity":"1"},500);
-		el.css("z-index","9");
-		VM.message("Texto Ocultado , Presione Z para restaurar.",3000,1000);
-	}
+  uivisible = (!uivisible);
+  if(uivisible){
+    $("#explanation").css("z-index","9");
+    $("#explanation").stop().animate({"opacity":"1"},500);
+    $(".vecUI").stop().animate({"opacity":0},1000).css("z-index",-10);
+    el.stop().animate({"opacity":"0.2"},500);
+    el.css("z-index","-9");
+    VM.message("Presione Z para volver al modo 3D.",3000,1000);
+  }
+  else{
+    $(".vecUI").stop().animate({"opacity":1},1000).css("z-index",14);
+    $("#explanation").css("z-index","-20");
+    $("#explanation").stop().animate({"opacity":"0"},500);
+    el.stop().animate({"opacity":"1"},500);
+    el.css("z-index","9");
+    VM.message("Texto Ocultado , Presione Z para restaurar.",3000,1000);
+  }
 }
 
 //Pops up a message in the user screen
 VM.message = function(msg,t1,t2){
-	if($("#messagepad").length == 0){
-		$("<div class=\"ui positive message\" id=\"messagepad\"> "+
-		"<div class=\"header\"><h1>"+
-		msg +"</h1></div></div>").appendTo("body");
-		$("#messagepad").addClass("rainbowFast");
-		$("#messagepad").css("position","fixed");
-		$("#messagepad").css("top","0px");
-		$("#messagepad").css("right","0px");
-		$("#messagepad").css("width","300px");
+  if($("#messagepad").length == 0){
+    $("<div class=\"ui positive message\" id=\"messagepad\"> "+
+    "<div class=\"header\"><h1>"+
+    msg +"</h1></div></div>").appendTo("body");
+    $("#messagepad").addClass("rainbowFast");
+    $("#messagepad").css("position","fixed");
+    $("#messagepad").css("top","0px");
+    $("#messagepad").css("right","0px");
+    $("#messagepad").css("width","300px");
 
-		window.setTimeout(function(){
-			$("#messagepad").stop().animate({opacity:0 , top : $(window).height()/2},t2);
-		}, t1);
-		window.setTimeout(function(){
-			$("#messagepad").remove();
-		}, t1+t2);
-	}
-	else {
-		$("#messagepad").remove();
-		VM.message(msg,t1,t2);
-	}
+    window.setTimeout(function(){
+      $("#messagepad").stop().animate({opacity:0 , top : $(window).height()/2},t2);
+    }, t1);
+    window.setTimeout(function(){
+      $("#messagepad").remove();
+    }, t1+t2);
+  }
+  else {
+    $("#messagepad").remove();
+    VM.message(msg,t1,t2);
+  }
 }
 
 //function to round to 2 decimals
