@@ -264,7 +264,7 @@ VM.Vector = function(destination , origin , options){
   this.direction = destination.normalize();
   this.options = options || {};
   this.vectorColor = this.options.color || new THREE.Color(Please.make_color({
-          saturation : 1
+          saturation : 2
   }));
   this.vectorObject = new THREE.ArrowHelper( this.direction , this.origin , this.vectorLen , this.vectorColor , this.vectorLen / 10, this.vectorLen / 20 );
   this.add(this.vectorObject);
@@ -363,7 +363,7 @@ VM.Vector.prototype.activateTag = function(tag, options){
         this.cube.position.copy(this.midpt);
 
         //Crear etiqueta html
-        var element = $('<div/>');
+       /* var element = $('<div/>');
         if(katex){
                 element.html(katex.renderToString(tag))
         }
@@ -378,7 +378,7 @@ VM.Vector.prototype.activateTag = function(tag, options){
         element.css({color : op.color});
 
 
-        op.jQueryContainer.append(element);
+        op.jQueryContainer.append(element);*/
 }
 
 

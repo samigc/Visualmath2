@@ -76,7 +76,6 @@
     var kk = new VM.Vector(kvect);
     scene.add(kk);
 
-    console.log(kk);
 
     var vmtween = new TWEEN.Tween({
       x: kk.destination.x,

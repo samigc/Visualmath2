@@ -2,24 +2,96 @@
 <html>
 <meta charset="utf-8">
 <head>
-<title>Visualmath</title>
+<title>Visual Math</title>
 
 <script src="/scripts/compatibility/jquery.min.js"></script>
 
 <script src="/scripts/compatibility/three.js"></script>
+
+<script src="/scripts/new.js"></script>
+<script src="/scripts/threestrap.js"></script>
 <script src="/scripts/threex.js"></script>
 <script src="/scripts/threex.keyboardstate.js"></script>
+<script src="/scripts/threex.domevents.js"></script>
+
+
 <script src="/scripts/compatibility/tween.min.js"></script>
 <script src="/scripts/compatibility/zAller_Regular.js"></script>
 <script src="/scripts/compatibility/zTrackballControls.js"></script>
 <script src="/scripts/Please-compressed.js"></script>
+<script src="/scripts/katex.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="/stylesheets/katex.min.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/matrices.css">
+
 <script src="/scripts/visualMath.js"></script>
 
 </head>
 
 <body>
+	<div class="ui very padded" id="vmcontainer">
 
-<div id="top"></div>
-</body>
-<script src="/scripts/first.js"></script>
+		<div class="ui card violet vecUI" style="position : fixed; top : 50px; left : 40px ; z-index: 9; opacity:0">
+			<div class="content">
+				<div class="header">Transformacion Homogenea</div>
+				<div class="meta">Introduzca la matriz de transformación que quiere aplicar al objeto mostrado en la animación. <br>
+					<form id="input_form" class="matrixinput4 ui fluid input">
+			<table class="ui violet table">
+				<thead>
+					<tr><th>x</th>
+						<th>y</th>
+						<th>z</th>
+						<th>w</th>
+					</tr></thead><tbody>
+						<tr>
+							<td><input type="text" name="a11" class="matrixinput4" value="1"></td>
+							<td><input type="text" name="a12" class="matrixinput4" value="0"></td>
+							<td><input type="text" name="a13" class="matrixinput4" value="0"> </td>
+							<td><input type="text" name="a14" class="matrixinput4" value="0"> </td>
+						</tr>
+						<tr>
+							<td><input type="text" name="a21" class="matrixinput4" value="0"></td>
+							<td><input type="text" name="a22" class="matrixinput4" value="1"></td>
+							<td><input type="text" name="a23" class="matrixinput4" value="0"></td>
+							<td><input type="text" name="a24" class="matrixinput4" value="0"> </td>
+						</tr>
+						<tr>
+							<td><input type="text" name="a31" class="matrixinput4" value="0"></td>
+							<td><input type="text" name="a32" class="matrixinput4" value="0"></td>
+							<td><input type="text" name="a33" class="matrixinput4" value="1"></td>
+							<td><input type="text" name="a34" class="matrixinput4" value="0"> </td>
+						</tr>
+						<tr>
+							<td><input type="text" name="a41" class="matrixinput4" value="0"></td>
+							<td><input type="text" name="a42" class="matrixinput4" value="0"></td>
+							<td><input type="text" name="a43" class="matrixinput4" value="0"></td>
+							<td><input type="text" name="a44" class="matrixinput4" value="0"> </td>
+						</tr>
+						<tr>
+							<td></td>
+							<td class="center aligned"><input type="submit" name="submit" value="&#10003;"></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table><br>
+
+
+			</form>
+
+				</div>
+
+				<div class="description">
+					<div id="katexfield5" class="katexbig">
+
+					</div>
+				</div>
+			</div>
+			<div class="extra content">
+				Se aplicara la transformacion producto de los vectores por la matriz ingresada.
+			</div>
+		</div>
+		
+	</body>
+	<script type="text/javascript" src ="/scripts/homog.js"></script>
 </html>
