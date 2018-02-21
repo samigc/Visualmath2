@@ -4,7 +4,7 @@
 <head>
 <title>Visual Math</title>
 
-<script src="scripts/compatibility/jquery.min.js"></script>
+<!-- <script src="scripts/compatibility/jquery.min.js"></script> -->
 
 <script src="scripts/compatibility/three.js"></script>
 
@@ -20,76 +20,77 @@
 <script src="scripts/compatibility/zTrackballControls.js"></script>
 <script src="scripts/Please-compressed.js"></script>
 <script src="scripts/katex.min.js"></script>
+<script src="scripts/visualMath.js"></script>
 
+<link rel="stylesheet" type="text/css" href="stylesheets/materialize.css">
 <link rel="stylesheet" type="text/css" href="stylesheets/katex.min.css">
 <link rel="stylesheet" type="text/css" href="stylesheets/matrices.css">
 
-<script src="scripts/visualMath.js"></script>
 
+<meta name="viewport" content = "width =device-width, initial-scale=1.0"/>
 </head>
 
 <body>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+      <script type="text/javascript" src="scripts/materialize.min.js"></script>
 	<div class="ui very padded" id="vmcontainer">
 
 		<div class="ui card violet vecUI" style="position : fixed; top : 50px; left : 40px ; z-index: 9; opacity:0">
 			<div class="content">
-				<div class="header">Transformacion Homogenea</div>
-				<div class="meta">Introduzca la matriz de transformación que quiere aplicar al objeto mostrado en la animación. <br>
-					<form id="input_form" class="matrixinput4 ui fluid input">
+				<h4 class="pink-text text-accent-2">Juega</h4>
+				<div class="meta flow-text">Explora qué sucede cuando escribes nuevos valores en la matriz que está a continuación y le das click al botón <br> <br>
+					<form id="input_form" class=" ui fluid input">
 			<table class="ui violet table">
 				<thead>
-					<tr><th>x</th>
-						<th>y</th>
-						<th>z</th>
-						<th>w</th>
+					<tr><th class="matrixinput4">x</th>
+						<th class="matrixinput4">y</th>
+						<th class="matrixinput4">z</th>
+						<th class="matrixinput4">w</th>
 					</tr></thead><tbody>
 						<tr>
-							<td><input type="text" name="a11" class="matrixinput4" value="1"></td>
-							<td><input type="text" name="a12" class="matrixinput4" value="0"></td>
-							<td><input type="text" name="a13" class="matrixinput4" value="0"> </td>
-							<td><input type="text" name="a14" class="matrixinput4" value="0"> </td>
+							<td class="matrixinput4"><input type="text" name="a11" class="matrixinput4"  value="1"></td>
+							<td class="matrixinput4"><input type="text" name="a12" class="matrixinput4" value="0"></td>
+							<td class="matrixinput4"><input type="text" name="a13" class="matrixinput4" value="0"> </td>
+							<td class="matrixinput4"><input type="text" name="a14" class="matrixinput4" value="0"> </td>
 						</tr>
 						<tr>
-							<td><input type="text" name="a21" class="matrixinput4" value="0"></td>
-							<td><input type="text" name="a22" class="matrixinput4" value="1"></td>
-							<td><input type="text" name="a23" class="matrixinput4" value="0"></td>
-							<td><input type="text" name="a24" class="matrixinput4" value="0"> </td>
+							<td class="matrixinput4"> <input type="text" name="a21" class="matrixinput4" value="0"></td>
+							<td class="matrixinput4"><input type="text" name="a22" class="matrixinput4" value="1"></td>
+							<td class="matrixinput4"><input type="text" name="a23" class="matrixinput4" value="0"></td>
+							<td class="matrixinput4"><input type="text" name="a24" class="matrixinput4" value="0"> </td>
 						</tr>
 						<tr>
-							<td><input type="text" name="a31" class="matrixinput4" value="0"></td>
-							<td><input type="text" name="a32" class="matrixinput4" value="0"></td>
-							<td><input type="text" name="a33" class="matrixinput4" value="1"></td>
-							<td><input type="text" name="a34" class="matrixinput4" value="0"> </td>
+							<td class="matrixinput4"><input type="text" name="a31" class="matrixinput4" value="0"></td>
+							<td class="matrixinput4"><input type="text" name="a32" class="matrixinput4" value="0"></td>
+							<td class="matrixinput4"><input type="text" name="a33" class="matrixinput4" value="1"></td>
+							<td class="matrixinput4"><input type="text" name="a34" class="matrixinput4" value="0"> </td>
 						</tr>
 						<tr>
-							<td><input type="text" name="a41" class="matrixinput4" value="0"></td>
-							<td><input type="text" name="a42" class="matrixinput4" value="0"></td>
-							<td><input type="text" name="a43" class="matrixinput4" value="0"></td>
-							<td><input type="text" name="a44" class="matrixinput4" value="0"> </td>
-						</tr>
-						<tr>
-							<td></td>
-							<td class="center aligned"><input type="submit" name="submit" value="&#10003;"></td>
-							<td></td>
-							<td></td>
+							<td class="matrixinput4"><input type="text" name="a41" class="matrixinput4" value="0"></td>
+							<td class="matrixinput4"><input type="text" name="a42" class="matrixinput4" value="0"></td>
+							<td class="matrixinput4"><input type="text" name="a43" class="matrixinput4" value="0"></td>
+							<td class="matrixinput4"><input type="text" name="a44" class="matrixinput4" value="0"> </td>
 						</tr>
 					</tbody>
 				</table><br>
 
+			<input class = "pink-text text-accent-2" type="submit" name="submit" value="&#10003;">
 
 			</form>
 
 				</div>
-
 				<div class="description">
 					<div id="katexfield5" class="katexbig">
 
 					</div>
 				</div>
 			</div>
-			<div class="extra content">
-				Se aplicara la transformacion producto de los vectores por la matriz ingresada.
+			<br>
+				<blockquote>
+			<div class="extra content flow-text">
+				Se multiplicarán los vectores del espacio por la transformación que escribiste.
 			</div>
+				</blockquote>
 		</div>
 		
 	</body>

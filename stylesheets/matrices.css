@@ -1,12 +1,35 @@
-input.matrixinput {
+/*input.matrixinput {
 	width : 55px;
 	padding : 4px;
 	margin : 2px;
+}*/
+
+.matrixinput4 {
+	width : 30px !important;
+	height: 30px !important;
+	/*padding-top: 5px;
+	padding-bottom: 5px;*/
+} 
+
+input.matrixinput4{
+	height: 30px !important;
 }
 
-input.matrixinput4 {
-	width : 37px;
-	padding : 2px;
-	margin : 1px;
-	font-size: 10px;
+
+form {
+	width: 200px;
+}
+
+td, th {
+	padding: 0px;
+}
+
+.content {
+	width: 200px;
+	padding: 10px;
+}
+
+
+span.katex-html {
+    margin: 2em;
 }

@@ -8,7 +8,7 @@ VM.Storage = {};
 
 //Tggl a
 VM.toggleUI = function(){
-  uivisible = (!uivisible);
+/*  uivisible = (!uivisible);
   if(uivisible){
     $("#explanation").css("z-index","9");
     $("#explanation").stop().animate({"opacity":"1"},500);
@@ -17,14 +17,14 @@ VM.toggleUI = function(){
     el.css("z-index","-9");
     VM.message("Presione Z para volver al modo 3D.",3000,1000);
   }
-  else{
+  else{*/
     $(".vecUI").stop().animate({"opacity":1},1000).css("z-index",14);
     $("#explanation").css("z-index","-20");
-    $("#explanation").stop().animate({"opacity":"0"},500);
+    $("#explanation").stop().animate({"opacity":"1"},500);
     el.stop().animate({"opacity":"1"},500);
-    el.css("z-index","9");
-    VM.message("Texto Ocultado , Presione Z para restaurar.",3000,1000);
-  }
+/*    el.css("z-index","9");
+    VM.message("Texto Ocultado , Presione Z para restaurar.",3000,1000);*/
+  
 }
 
 //Pops up a message in the user screen
