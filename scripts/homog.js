@@ -98,6 +98,7 @@ var matriz_input = function (event) {
 
 	gl.scene.add(gl.grid);
 
+
 	//Initial camera position
 	gl.camera.position.x = 17;
 	gl.camera.position.y = 12;
@@ -119,11 +120,16 @@ var matriz_input = function (event) {
 	gl.m3 = new THREE.Matrix4() ;
 	//console.log(gl.m3);
 	//Draw vctors
-	gl.vector = {v3: new Array(3), geom: new Array(3) };
-	for (var i = 0; i < gl.vector.v3.length; i++) {
+	gl.vector = {v3: new Array(4), geom: new Array(4) };
+
+	gl.vector.v3[0] = VM.V3(1,0,0);
+	gl.vector.v3[1] = VM.V3(0,1,0);
+	gl.vector.v3[2] = VM.V3(-1,0,0);
+	gl.vector.v3[3] = VM.V3(0,-1,0);
+/*	for (var i = 0; i < gl.vector.v3.length; i++) {
 		gl.vector.v3[i]=VM.V3(Math.random()*20,Math.random()*20,Math.random()*20)
 		.multiplyScalar((Math.random()-0.5))
-	}
+	}*/
 
 	for (var i = 0; i < gl.vector.geom.length; i++) {
 		var vborn = new VM.V3().copy(gl.vector.v3[i]);
@@ -144,6 +150,7 @@ var matriz_input = function (event) {
 		gl.vector.v3[0],
 		gl.vector.v3[1],
 		gl.vector.v3[2],
+		gl.vector.v3[3],
 		gl.vector.v3[0]
 	);
 
@@ -181,7 +188,8 @@ var matriz_input = function (event) {
 		gl.line.geometry.vertices[0] = gl.vector.geom[0].destination;
 		gl.line.geometry.vertices[1] = gl.vector.geom[1].destination;
 		gl.line.geometry.vertices[2] = gl.vector.geom[2].destination;
-		gl.line.geometry.vertices[3] = gl.vector.geom[0].destination;
+		gl.line.geometry.vertices[3] = gl.vector.geom[3].destination; 
+		gl.line.geometry.vertices[4] = gl.vector.geom[0].destination; 
 
 		gl.line.geometry.verticesNeedUpdate = true;
 		/////////////////////////////////////////////////////////////////////////////////////////////////////
